@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    android:key="preferencias_principal" >
+    <CheckBoxPreference
+            android:key="notificaciones"
+            android:title="Mandar Notificaciones"
+            android:summary="Notificar si estamos cercar de un lugar"/>
+
+    <ListPreference
+            android:key="criterio"
+            android:title="Criterio de Ordenamiento"
+            android:summary="Que lugares quieres que aparezcan antes"
+            android:entries="@array/tiposOrdenamiento"
+            android:entryValues="@array/tiposOrdenamientoValores"
+            android:defaultValue="1"
+    />
+    <EditTextPreference
+            android:key="maximo"
+            android:title="Maximo de Lugares a Mostrar"
+            android:summary="Limita el numero de lugares que aparecen en la lista"
+            android:inputType="number"
+            android:defaultValue="10"/>
+
+    <PreferenceCategory
+        android:title="Notificaciones por Correo">
+    <CheckBoxPreference
+        android:key="notificaciones"
+        android:title="Recibir Correos">
+    </CheckBoxPreference>
+    <EditTextPreference
+        android:key="mail"
+        android:title="Direccion de Correo"
+        android:summary="Cuenta a la cual se enviaran los mails"
+        android:inputType="textEmailAddress">
+    </EditTextPreference>
+    <ListPreference
+        android:key ="tipoNotificacion"
+        android:title="Tipos de Notificaciones"
+        android:summary="Tipo de correos que quieres recibir">
+    </ListPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
