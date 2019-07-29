@@ -15,7 +15,11 @@ class CasosUsoLugar(val actividad: Activity,
     // OPERACIONES BÁSICAS
     fun mostrar(pos: Int) {
         val i = Intent(actividad, VistaLugarActivity::class.java)
-        i.putExtra("pos", pos);
-        actividad.startActivity(i);
+        i.putExtra("pos", pos)
+        actividad.startActivity(i)
+    }
+    fun borrar(id: Int) {
+        lugares.borrar(id)
+        actividad.finish()
     }
 }

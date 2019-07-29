@@ -10,9 +10,12 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast
 import android.preference.PreferenceManager
+import android.support.v7.app.AlertDialog
+import android.widget.EditText
 import com.example.mislugares.Aplicacion
 import com.example.mislugares.R
 import com.example.mislugares.casos_uso.CasosUsoLugar
+import java.lang.Integer.parseInt
 
 
 class MainActivity : AppCompatActivity() {
@@ -74,6 +77,17 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
     }
     fun lanzarVistaLugar(view: View? = null) {
-        usoLugar.mostrar(0)
+        val entrada = EditText(this)
+        entrada.setText("0")
+        AlertDialog.Builder(this)
+            .setTitle("Selección de lugar")
+            .setMessage("indica su id:")
+            .setView(entrada)
+            .setPositiveButton("Ok")  { dialog, whichButton ->
+                val id = parseInt(entrada.text.toString())
+                usoLugar.mostrar(id);
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
     }
 }
