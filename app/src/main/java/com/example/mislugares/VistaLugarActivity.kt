@@ -2,13 +2,21 @@ package com.example.mislugares
 
 import android.app.Activity
 import android.os.Bundle
+
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.example.mislugares.casos_uso.CasosUsoLugar
 import com.example.mislugares.modelos.Lugar
+
 import kotlinx.android.synthetic.main.vista_lugar.*
+
 import java.text.DateFormat
 import java.util.*
+
+val RESULTADO_EDITAR = 1
+val RESULTADO_GALERIA = 2
+val RESULTADO_FOTO = 3
 
 class VistaLugarActivity : Activity(){
 val lugares by lazy { (application as Aplicacion).lugares }
@@ -31,8 +39,16 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.getItemId()) {
-            R.id.accion_compartir -> return true
-            R.id.accion_llegar -> return true
+            R.id.accion_compartir ->{
+                usoLugar.compartir(lugar)
+            return true
+        }
+
+            R.id.accion_llegar ->
+            {
+                usoLugar.verMapa(lugar)
+                return true
+            }
             R.id.accion_editar -> return true
             R.id.accion_borrar -> {
                 usoLugar.borrar(pos)
@@ -56,5 +72,13 @@ override fun onCreate(savedInstanceState: Bundle?) {
     valoracion.setOnRatingBarChangeListener {
             ratingBar, valor, fromUser -> lugar.valoracion = valor
     }
-}
+        usoLugar.visualizarFoto(lugar, foto);
+    }
+    fun verMapa(view: View) = usoLugar.verMapa(lugar)
+
+    fun llamarTelefono(view: View) = usoLugar.llamarTelefono(lugar)
+
+    fun verPgWeb(view: View) = usoLugar.verPgWeb(lugar)
+
+    fun ponerDeGaleria(view: View)= usoLugar.ponerDeGaleria(RESULTADO_GALERIA)
 }

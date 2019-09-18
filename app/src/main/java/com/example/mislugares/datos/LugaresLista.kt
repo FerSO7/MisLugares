@@ -29,7 +29,7 @@ class LugaresLista : RepositorioLugares {
         listaLugares.removeAt(id)
     }
 
-    override fun tamaño(): Int {
+    override fun tamanyo(): Int {
         return listaLugares.size
     }
 
@@ -40,6 +40,7 @@ class LugaresLista : RepositorioLugares {
         val lugar = Lugar("Escuela pete", TipoLugar.EDUCACION,"agusto 50", GeoPunto.SIN_POSICION, null,442245,
             "www.pete.com","Pesima Educacion",System.currentTimeMillis(),1f)
         listaLugares.add(lugar)
-
+        val lugar2 = Lugar("Bar pete", TipoLugar.BAR,"coquimbo 77", GeoPunto.SIN_POSICION, null,442245,
+            "www.Barpete.com","Pesimo Bar",System.currentTimeMillis(),2f)
     }
 }

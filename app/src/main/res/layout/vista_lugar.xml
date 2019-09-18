@@ -36,7 +36,8 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:onClick="verMapa">
             <ImageView
                     android:id="@+id/logo_direccion_lugar"
                     android:layout_width="40dp"
@@ -54,38 +55,38 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal" android:onClick="llamarTelefono">
             <ImageView
                     android:id="@+id/logo_telefono"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:contentDescription="logo del telefono"
-                    android:src="@android:drawable/ic_menu_call" />
+                    android:src="@android:drawable/ic_menu_call"/>
             <TextView
                     android:id="@+id/telefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Telefono del lugar" />
+                    android:text="Telefono del lugar"/>
         </LinearLayout>
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal" android:onClick="verPgWeb">
             <ImageView
                     android:id="@+id/logo_url"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:contentDescription="logo de url"
-                    android:src="@android:drawable/ic_menu_mapmode" />
+                    android:src="@android:drawable/ic_menu_mapmode"/>
             <TextView
                     android:id="@+id/url"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Url del lugar" />
+                    android:text="Url del lugar"/>
         </LinearLayout>
         <LinearLayout
                 android:layout_width="match_parent"
@@ -172,7 +173,9 @@
                 <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/galeria"/>
+                        android:id="@+id/galeria"
+                        android:onClick="ponerDeGaleria"
+                />
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>

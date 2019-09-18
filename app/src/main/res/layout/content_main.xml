@@ -1,35 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
+<android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/activity_main"
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentacion.MainActivity">
-
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" android:gravity="center" android:padding="@dimen/margen_botones">
-        <Button
-                android:text="@string/mostrar_lugares"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button_1" android:onClick="mostrarPreferencias"/>
-        <Button
-                android:text="@string/preferencias"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button_2" android:onClick="lanzarPreferencias"/>
-        <Button
-                android:text="@string/acerca_de"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button_3"
-                android:onClick="lanzarAcercaDe"/>
-        <Button
-                android:text="@string/salir"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button_4"
-                android:onClick="salir"/>
-    </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />

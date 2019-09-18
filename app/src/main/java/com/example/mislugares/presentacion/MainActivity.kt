@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast
 import android.preference.PreferenceManager
 import android.support.v7.app.AlertDialog
+import android.support.v7.widget.LinearLayoutManager
 import android.widget.EditText
 import com.example.mislugares.Aplicacion
 import com.example.mislugares.R
@@ -21,6 +22,7 @@ import java.lang.Integer.parseInt
 class MainActivity : AppCompatActivity() {
 
     val lugares by lazy { (application as Aplicacion).lugares }
+    val adaptador by lazy { (application as Aplicacion).adaptador }
     val usoLugar by lazy { CasosUsoLugar(this, lugares) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +32,15 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        }
+        recyclerView.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = adaptador
+        }
+        adaptador.onClick  =  {
+            val pos = recyclerView.getChildAdapterPosition(it)
+            usoLugar.mostrar(pos)
         }
     }
 
@@ -52,13 +63,13 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.menu_buscar -> {
-                lanzarVistaLugar()
+                //lanzarVistaLugar()
                 true;
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
-    fun lanzarAcercaDe(view: View){
+   /* fun lanzarAcercaDe(view: View){
         val i = Intent(this, AcercaDeActivity::class.java)
         startActivity(i)
     }
@@ -89,5 +100,5 @@ class MainActivity : AppCompatActivity() {
             }
             .setNegativeButton("Cancelar", null)
             .show()
-    }
+    }*/
 }

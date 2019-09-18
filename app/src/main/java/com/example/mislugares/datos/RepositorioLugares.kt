@@ -8,7 +8,7 @@ interface RepositorioLugares {
     fun añade(lugar : Lugar)
     fun nuevo(): Int       //Añade un elemento en blanco y devuelve su id
     fun borrar(id: Int)    //Elimina el elemento con el id indicado
-    fun tamaño(): Int     //Devuelve el número de elementos
+    fun tamanyo(): Int     //Devuelve el número de elementos
     fun actualiza(id: Int, lugar: Lugar)  //Reemplaza un elemento
 
   /*  fun añadeEjemplos() {
